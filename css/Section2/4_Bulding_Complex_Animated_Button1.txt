@@ -1,0 +1,703 @@
+We're almost done building the first
+
+section of our page, but what's missing is this cool
+
+animated button that I showed you right at the beginning.
+
+So let's go build that.
+
+By coding up this button, you will learn techniques
+
+that are going to be useful in countless situations
+
+in the future.
+
+So you're going to learn what pseudo-elements
+
+and pseudo-classes are and why they are important.
+
+How and why to use the after pseudo-element
+
+and how to build a creative hover animation effect
+
+using the transition property.
+
+So this lecture is probably going to be rather long
+
+but I promise you it's going to be totally worth it.
+
+So the button that I'm talking about is this one here.
+
+And so it has this nice effect you see
+
+where it looks like it's getting bigger
+
+and then in the end it fades out after like
+
+half a second or something, you see?
+
+So this is what we're going to build.
+
+So it moves up a little bit and
+
+creates this shadow beneath it
+
+and so it looks like it's moving up
+
+in direction to the user.
+
+So let's check it again.
+
+So it's like it's really moving up,
+
+that's why the shadow then appears.
+
+Now, look what happens when we click it,
+
+so it goes down a little bit and the shadow also
+
+disappears a little bit as if we were really
+
+pushing it towards the page.
+
+Want to see it again?
+
+So we hover it, it elevates, and then as we click it,
+
+it looks like it's going back down,
+
+and you can see it because it moves down
+
+and because the shadow gets a little bit smaller.
+
+So you see?
+
+There it is.
+
+And actually moves down, but let's see it again and
+
+there it is, right?
+
+So let's first code up that part
+
+where this functionality happens
+
+and then later we're going to care about this white part
+
+that looks like it's like flying out or something,
+
+it's growing bigger and bigger and then disappears.
+
+So back to our markup here,
+
+remember that I was saying that we were going to
+
+add something here to this text box
+
+and what I mean is, of course, this button.
+
+So the button will be an anchor element,
+
+so a for now, with an href of nothing,
+
+so leading to nothing, which is this hash symbol
+
+and then of course, we need to give it some class,
+
+and I'm going to call it, as usual, button,
+
+but at the same time, I'm giving it another class,
+
+calling button, white, because we're going to have
+
+multiple buttons on the page, some will be white
+
+some will be green, but most of the functionality
+
+is the same, only the color changes and so I'm going
+
+to put the styles about the color here in this class
+
+and the stuff that doesn't change
+
+from the white to the green button in this button class.
+
+So we've done this before, at least in my other HTML course
+
+and so this should be nothing new to you,
+
+it's just a good practice.
+
+Alright, and the text, which we have on this link,
+
+on this button, is discover our tours,
+
+just like this.
+
+And so let's now start styling the button element down here.
+
+So you see our CSS file is getting rather long,
+
+we're already at 121 lines here, but don't worry,
+
+we're going to think about architecture
+
+and all that stuff a bit later.
+
+So for now, in this section, we're just focusing on
+
+getting this code ready here and
+
+getting this header element ready
+
+and we're going to think about organizational aspects
+
+of our code a bit later.
+
+So with this, we select a button element
+
+but since it's a link, I'm sure you already know
+
+that we should do it like this.
+
+Alright, and what is this?
+
+So this here is a pseudo-class, it's the link pseudo-class.
+
+And pseudo-classes are a special state of a selector.
+
+So this link here is a state of the button selector.
+
+So like when a user hovers an element, or when a checkbox
+
+is clicked or if we want to select a last-child,
+
+and many other possibilities.
+
+So we use pseudo-classes to style elements
+
+under a special condition.
+
+And it's a very important concept
+
+that we're going to use all the time.
+
+So the link is a special state of a selector when it is
+
+an anchor element so it functions as a link.
+
+But there's also the visited state.
+
+So button visited.
+
+So this is the state when the user has already clicked
+
+on the button once before and then sees the button again,
+
+so that's the visited state.
+
+And I'm sure that you know that for example, if we don't
+
+style a link at all, it will appear blue in the beginning
+
+and then once we click on it once, when we see it again,
+
+then it will be purple.
+
+So that's the default styling of links
+
+in most of the browsers.
+
+Now we don't want this, we want the visited state to
+
+look at exactly like the link state, so the normal state
+
+of our links and so we just put them together.
+
+Now the first thing that we're going to do is to say
+
+that we want the text to be uppercase,
+
+text transform uppercase.
+
+We want there to be no text decoration.
+
+Let's actually take a look so we can see
+
+what exactly we want to change.
+
+So here we go.
+
+So we don't want, of course, this color
+
+and we don't want this underline,
+
+so let's get rid of it.
+
+So, text decoration and I'm sure you
+
+already know all of this,
+
+that's why these properties that are not really new to you,
+
+I'm not really explaining what they're doing, okay?
+
+And then the text we want to be gray.
+
+Now remember that we're going to have multiple colors
+
+for the button and so in the white button,
+
+the text will be this dark gray,
+
+but in the green button, it will probably be white.
+
+And so that's something that we have to do
+
+in this external class.
+
+So let me already create that actually,
+
+so it's called button white, and so here we're going
+
+to have a background color of white, of course,
+
+background color, and just so I did this trick
+
+where I just write a couple of letters and then the
+
+text editor figures our which property I want
+
+and this way I have to type less code.
+
+So white as we saw already, FFF,
+
+and the color should be 777 as we already used before.
+
+Now we also want some padding around the button, of course,
+
+so let's specify that as well.
+
+And once again, I'm sure you're already familiar with how
+
+the shortened property of padding works.
+
+So we can specify only one value and then it will
+
+apply everywhere, so top, bottom, left, and right
+
+or we can also write two values.
+
+Then the first one will be for top and bottom
+
+and then second one will be for left and right.
+
+So let's say 15 pixels and 40 pixels.
+
+So now we have a padding at the top and at the bottom of
+
+15 pixels and left and right, 40 pixels.
+
+And we could also write four numbers.
+
+Then the first one would be top, the second would be right,
+
+the third one would be the bottom,
+
+and the fourth one would be for the left side.
+
+Okay, now check this out,
+
+but I will tell you already that it's not going to work as
+
+expected because it's occupying here this space
+
+on the top of this other text where it shouldn't.
+
+That's because it's right now, an inline element.
+
+So this button here is right now an inline element
+
+because it's simply text, but we should display it
+
+as an inline block.
+
+And this way the box model works on this element as if
+
+was just a normal block element, okay?
+
+So we should always do this if we want to
+
+give some paddings or some heights
+
+or width to elements, okay?
+
+Now another thing that I noticed here,
+
+let me just refresh this, so now it has its own space.
+
+Another thing that we want is this actually here to be in
+
+the middle of this box, right?
+
+So how could we do that?
+
+How could we achieve this button to be
+
+in the center of the box?
+
+Do you think we should use absolute positioning
+
+or transforms like we did before?
+
+Well I don't think so because
+
+that would really be overkill.
+
+It would be way to much for this very simple problem.
+
+So this is an inline block element and
+
+so it's treated as if it was text.
+
+And so if it's text and we want it to be at the center
+
+of this box, all we have to do is to set the text box,
+
+I believe it's called.
+
+Exactly, it's text box.
+
+All we have to do is to set its text align property
+
+to the center and that's it.
+
+So now it's going to center the text
+
+that is inside of the box, including of course, the button.
+
+So just to be sure, yeah, here it goes.
+
+And since we're here, let's also add here some white
+
+space between this heading element and the button.
+
+So how do we do white space?
+
+Exactly, we use the margin property.
+
+And in this case we just want margin at the bottom,
+
+we say margin bottom and let's say we want 60 pixels.
+
+Alright.
+
+I'm not going to check it right now,
+
+we're going to check it later on.
+
+So this is link in the visited state.
+
+Now let's take care actually of the hover state.
+
+So button hover, so another pseudo-class to select
+
+a different and special state of this element.
+
+So what do we want to happen, remember?
+
+The first thing is for this element to move up.
+
+So how can we do that?
+
+We use transform, such as we did before.
+
+So you see transform is something really, really important.
+
+It's an extremely important property that we're
+
+using all the time to create cool and modern effects,
+
+where elements move around or even rotate or stuff,
+
+so transform is really important.
+
+So now we want to translate it and we want it to move up.
+
+So which direction is that?
+
+X or upsilon?
+
+And it's right, it's direction upsilon, of course.
+
+And we want it to move up so we use a negative value
+
+and that's because in CSS, the upsilon axis moves from
+
+the top to the bottom, so it's like
+
+from the top to the bottom.
+
+And if you want to move up, we have to go the
+
+other way around and so it's negative.
+
+So to go up, it's a negative value.
+
+So negative, minus three pixels in this case.
+
+So that's for the hover.
+
+Now when we clicked it, remember it looked a bit different.
+
+So it's the active state remember, when we click an element
+
+then that's called the active state.
+
+So it's the active pseudo-class.
+
+So remember what it looked like when we clicked it?
+
+Again, it's a translate because again, it moved
+
+and this time we're only moving it one pixel up.
+
+So this one pixel up, so this minus one pixel
+
+is in relation to the initial state, so to the link state,
+
+not to the hover.
+
+So it's not minus one pixel
+
+in relation to the hover state, but
+
+it's always here related to the initial link state, okay?
+
+So let's check that out.
+
+So the margin is there and we hover so it goes up.
+
+No animation so far but it goes up
+
+and when we click, it goes down a bit, right?
+
+So, cool.
+
+Now all we have to do is to animate this and then
+
+also add these shadows.
+
+But first let's actually add the rounded corners.
+
+So border radius, and here we can put a really high number,
+
+like let's say even 100 pixels or something and then
+
+what it will do is to simply shape it like this here
+
+on the edges.
+
+So if you put 200 or 500 pixels,
+
+it will all still be the same, okay?
+
+So now all we have to do is the small animation.
+
+So remember that in the last lecture,
+
+I said that there are two types of animations.
+
+The first one is to simply use the transition property,
+
+which is the easy one, and the more complex one is
+
+the method that we used,
+
+which was to really specify the steps of the
+
+animations with the keyframes at-rule.
+
+Now in this case, that's not necessary, is all.
+
+All we have to do is use the transition property,
+
+transition, now we have to just specify
+
+which properties we want to animate.
+
+And if we're not really sure, or if we don't want to
+
+write them out, we can simply say all.
+
+So in this case, all the properties
+
+are enabled to be animated.
+
+Then we can also specify a time that we want.
+
+Let's say that we want 0.2 seconds.
+
+So this is already the shorthand version of the transition.
+
+So just like before here where we had a shorthand for
+
+animation, instead of writing out all of these properties,
+
+we do the same with transition.
+
+We just write all of these possibilities here in the same
+
+property as a shorthand because it's just easier.
+
+It's another transform on the hover as well as
+
+on the active will be animated in relation
+
+to their initial state.
+
+And this is actually causes sometimes a lot of confusion
+
+as to why the transition property
+
+has to be on the initial state.
+
+But that's just how it works.
+
+So on the initial states, we say that there can be
+
+a transition basically on all the properties
+
+and then on the hover, so here we say, how it should
+
+look like in the hover state and in the active state
+
+and then the animation is going to happen.
+
+So let's take a look at that.
+
+And yeah, here we go.
+
+So now it moves up and very nicely it moves down,
+
+just like this, okay.
+
+Now all we have to do is to add the box shadow
+
+and this also when we do the hover.
+
+And so in the box shadow property, we can specify
+
+a bunch of values.
+
+So the first one is the offset in the x direction.
+
+And since we don't want any shadow in the x direction,
+
+you only want it in the upsilon direction,
+
+we put a zero here.
+
+Now in upsilon, which is the second one, we actually
+
+want some offset, so 10 pixels let's say.
+
+So the shadow will be 10 pixels down.
+
+Then the third value is the blur that we want to see.
+
+And let's say 20 pixels so we have a really high blur here.
+
+And this makes for a more blurry shadow
+
+so it looks like we're further away.
+
+And so in the active box shadow, we're then
+
+going to reduce that blur and
+
+then it looks like we're back closer to the page, okay?
+
+And here now, finally, we can put a color.
+
+So an RGBA in this case because we want the color of the
+
+shadow to be transparent.
+
+So here we put it to black, complete black,
+
+and then let's just put a transparency value.
+
+So this is black, but not completely black,
+
+but only with 20% opacity, in order to make it
+
+just a very subtle shadow and not all too visible.
+
+We want it to be very subtle, okay?
+
+Now you can play around then with different numbers
+
+to see how it's going to look like if you make it darker,
+
+if you make it less opaque.
+
+20% I think is a good way to go.
+
+Now remember, when we click on the button,
+
+so when it's active, we want the shadow to look smaller
+
+and so to give the impression that the button is closer
+
+to the page and so further away from the user.
+
+So let's decrease this here to five and then we also
+
+want it less blurred.
+
+So let's say 10 pixels here, okay?
+
+So I'm doing this from my experience because I have
+
+a lot of experience by playing around with these values
+
+so if this looks a bit like magic to you, then don't worry,
+
+it comes with practice.
+
+And so again, you should just play around with these numbers
+
+and take a look how things behave
+
+if you change the values, okay?
+
+Now let's just take a look.
+
+And yeah, so you see the shadow coming up, right?
+
+And now when we click it, it goes down like this.
+
+So we lose a bit of shadow and it also becomes less blurry.
+
+Just to show you how it would look like with one pixel,
+
+for example, let's see.
+
+So you see, there's a lot less blur now, right?
+
+But we want a little bit of blur
+
+to make it look more natural,
+
+and so let's put that 10 pixel that we had before.
+
+Okay and with that we have the
+
+first part of the button ready.
+
+Now to build the second part of this button,
+
+which includes some more animation effects,
+
+just join me right in the next lecture.

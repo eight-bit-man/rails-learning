@@ -1,0 +1,801 @@
+In this lecture, we are gonna continue
+
+building the header section of our project
+
+using some CSS properties that you're already familiar with.
+
+And you're also gonna learn the easiest
+
+way to center anything in CSS with transform, top, and left.
+
+Which is something really important.
+
+So, this is where we left after the last lecture.
+
+So let's now take a look at the final product.
+
+And so what we're gonna do in this lecture,
+
+is to just add this small logo here.
+
+And then, we're also going to add this heading here.
+
+So this is the plan for this lecture
+
+And let's start with the image.
+
+So first off, in the HTML,
+
+we actually have to add that image.
+
+So let's remove the text here.
+
+And what I'm gonna do now is to add first a DIV,
+
+and then inside that DIV is where I'm gonna put an image.
+
+Because the image is actually an inline element,
+
+and so I think it's a better practice
+
+to first have a small container
+
+where this image is inside,
+
+and then position that container
+
+to where we want the image and the container to be.
+
+So first, I'm writing a DIV with a class of logo box.
+
+And then in here, I'm going to put the image.
+
+So we go into the image folder, so IMG,
+
+and then from here,
+
+the logo that we want is called logo white.
+
+So it's this one here.
+
+So, IMG, and then logo white.
+
+And then we also give it an alt attribute.
+
+And remember that the alt attribute is
+
+to describe the image for SEO,
+
+so Search Engine Optimization,
+
+but also for the case that somehow the image fails to load,
+
+then on the website instead of the image appears this text,
+
+so that users can still see
+
+what the image that isn't there is all about.
+
+So I'm just gonna put here logo.
+
+I'm also going to add a class and call it just logo.
+
+So we have a logo box and then logo.
+
+So let's now style it.
+
+So first the logo box.
+
+And then the logo after that.
+
+And remember where we want to put the image.
+
+So it's here in this corner.
+
+And so one good way of doing this
+
+is to use absolute positioning.
+
+And I'm once again sure that you already
+
+know how absolute positioning works,
+
+but in the next section there is a big lecture
+
+which talks about the difference between
+
+absolute and relative positioning,
+
+and the normal flow and floats,
+
+and all of that stuff,
+
+so that you really understand how
+
+all of this works behind the scenes.
+
+Okay.
+
+But for now, let's just simply use the position absolute,
+
+like you already know how to do.
+
+And we can then use top, bottom, left, and right properties
+
+to put the image exactly where we want it to be.
+
+So, let's say we want the top to be 40 pixels,
+
+and the left to be 40 pixels.
+
+Now, where does this measurement actually start?
+
+So, from where, counting from where, is these 40 pixels?
+
+And also these 40 pixels.
+
+There has to be some kind of reference, right?
+
+So, the place from which we start to count 40 pixels
+
+to the left, and 40 pixels from the top.
+
+Right?
+
+And that reference is a parent element,
+
+which has its position set to relative.
+
+And so we should also do that.
+
+And remember that the header is the parent element, right?
+
+So, logo box and the parent is the header.
+
+And so we should go to header
+
+and set its position to relative.
+
+Position relative.
+
+So now this is the origin, so the reference,
+
+from which top and left start to count.
+
+Okay.
+
+Now just before we check if this already looks good,
+
+let's just specify the size of the image itself.
+
+So we say height, 35 pixels.
+
+That will be okay.
+
+And then the width we'll scale accordingly.
+
+So we don't even have to specify it.
+
+All we do is to specify the height,
+
+and the width will be automatically
+
+figured out by the browser.
+
+We could instead also set the width
+
+and then the height would be figured out by the browser.
+
+But I prefer to do it like this.
+
+I always prefer to control the height of the elements.
+
+So let's now take a look.
+
+And indeed, there it is.
+
+Okay. So this part is completed.
+
+Let's now take care of this primary heading
+
+that we have here.
+
+So this one here, right.
+
+So back to the HTML,
+
+right after this logo box we will have our primary heading.
+
+So I'm going to use the H one element,
+
+and call it heading primary.
+
+Alright.
+
+Now, let's actually go back
+
+to take a look at how we want this.
+
+So we want this basically to have two parts.
+
+So we have this entire text here, but this is all the H one.
+
+Remember that the H one is the single most important
+
+heading on the page,
+
+which is important for Google or for any other search engine
+
+to figure out what our webpage is all about.
+
+And so it's important that we basically
+
+put the title of our webpage in there.
+
+Now we could only just put outdoors in there,
+
+so make this the H one, and then for example,
+
+make an H two here for the secondary header,
+
+and put this is where life happens in there.
+
+But that's not what we want,
+
+because we don't want our primary text
+
+or title of the website to say just outdoors.
+
+We want all of this text.
+
+And so we must somehow divide this text.
+
+So, what are we going to do?
+
+We are going to use this span element.
+
+And this span element is perfect for this
+
+because remember that a span
+
+is simply to style some text different.
+
+And so we can just put two span elements in here,
+
+one for each part.
+
+One for the top, and one for the bottom.
+
+So span, class, heading, primary, main.
+
+And then the same
+
+for
+
+the part on the bottom.
+
+Let's call it sub.
+
+So the first one says outdoors.
+
+And down here, is where life happens.
+
+So that's basically the slogan of the company.
+
+And with that, we're good to go, and to format this text.
+
+So, heading, primary, let me already copy it.
+
+And then also
+
+main,
+
+and then also for the sub.
+
+So the first thing that we want is the color to be white.
+
+And that is just this fff code.
+
+So in RGB fff is basically the same as saying this one here.
+
+Okay.
+
+And you see that both of them are the complete white.
+
+So the presence of all the colors at the same time.
+
+So it's complete red, complete green, and complete blue.
+
+Okay.
+
+But this is enough.
+
+Now another thing that we want is to text the uppercase,
+
+so we say text, transform, uppercase.
+
+And for now that should be enough.
+
+Let's just take a look.
+
+And alright.
+
+So our text is already here, it's already white.
+
+It's not quite where we want it to be,
+
+but we're gonna take care of that later.
+
+Next, what we want to do,
+
+is to put this on top, and this below it.
+
+Right?
+
+So we want outdoors on top,
+
+and then after that this part here.
+
+Also this text should be bigger, and this one smaller.
+
+And also, as you see, it has this huge spacing here.
+
+So I did this to make it look really big,
+
+to give it some space to breathe.
+
+I think this looks like outdoors.
+
+It looks great with all this spacing.
+
+That's why I decided to go this way.
+
+Let's style it like this,
+
+in the code here.
+
+So, what should we do in order to put
+
+these two parts of the text, one under another?
+
+Do you have any idea of a good way of doing this?
+
+I think the best way is to display
+
+them both as block level elements.
+
+Because remember that block elements
+
+occupy the entire width that they have available.
+
+And more importantly for this case,
+
+they create line breaks after and before them.
+
+And so that's exactly what we want.
+
+So a span element is by default, an inline element.
+
+So it's just like text.
+
+And so we use the display property.
+
+Display, and display it as a block.
+
+Simple as that.
+
+And the same thing down here for the other span element.
+
+Display, and also block.
+
+So that solves that part.
+
+Now they need different font sizes.
+
+So let's set this one to 60 pixels.
+
+Give it a font white of 400.
+
+Because by default, the H one has a higher font white, okay.
+
+And then we also give it the letter spacing of,
+
+let's say, 35 pixels.
+
+Okay. And now similar specifications down here
+
+for the sub-part of the H one.
+
+So a font size in this case of 20 pixels,
+
+font weight of 400 as well.
+
+And the letter spacing, I'm going to put it to 15 pixels,
+
+just to try it out, and if it doesn't look good,
+
+we can always come back and adjust it.
+
+So, I'm gonna reload.
+
+And alright, it already looks pretty good.
+
+Let's take a look at the inspector here, so,
+
+to see what's happening here.
+
+And indeed, so this is now a block,
+
+and this is another block.
+
+It occupies 100% of the width,
+
+as you can see in the blue box,
+
+exactly like a block element should behave.
+
+And of course this also forces them into another line.
+
+Now we need to slightly increase the letter spacing here.
+
+So 17 looks good.
+
+Maybe 17 five.
+
+17 four.
+
+Okay.
+
+That looks about right.
+
+So let's memorize this.
+
+So 7.4.
+
+And then also the weight of the font here
+
+looks a bit too thin here compared to that one, okay.
+
+So let's also increase that.
+
+So the other spacing is 17.4.
+
+17.4 pixels.
+
+And now let's take a look at which weight
+
+we actually have available.
+
+So we have 100, 300, 400, 700, and 900.
+
+So these are the font weight
+
+that are loaded for this specific lotto font.
+
+So we had 400, so let's now jump up to 700.
+
+Taking a look again.
+
+And yeah, so this looks much better now.
+
+Alright. And with that formatted,
+
+we should now find a way to make this displayed
+
+exactly in the center.
+
+Now of course, this should stay exactly in the center
+
+no matter what the screen size is.
+
+So no matter the width,
+
+and no matter the height of the window, right.
+
+No matter what height we have for the screen,
+
+we always want this to stay in the middle.
+
+Because of course, we're building a responsive website here.
+
+And more about that later, again.
+
+But for now, what we need to focus on,
+
+is to put this text here, exactly here in the center.
+
+So let's find out how we're gonna do that.
+
+Now, first off, let's go back to our markup here in HTML,
+
+because we're actually going to
+
+put all of this in a different box, in a container,
+
+because we're gonna add something more
+
+into this box later on.
+
+I can actually show you,
+
+we're going to add this button here,
+
+also in the same box,
+
+which also should stay in the center by then.
+
+Alright.
+
+So we cannot just center this part here,
+
+but we're going to center an entire box.
+
+Like this. I'm going to show you.
+
+So this entire box here
+
+is what we're going to do,
+
+and to center.
+
+So, let's just call it
+
+text box for now.
+
+And then I'm gonna put all of this
+
+inside.
+
+So, text box is what we're gonna style next.
+
+I'm putting it here just to follow
+
+the natural order of the HTML.
+
+So, text box.
+
+So, what is the best way to exactly center that box
+
+in the middle of our header?
+
+And the answer is that, once again,
+
+we're going to use absolute positioning.
+
+Alright?
+
+So, position absolute again.
+
+Now about the top, and the left.
+
+They will have to be a bit different.
+
+And I'm going to show you how.
+
+So, we start by saying top 50%,
+
+and left 50%.
+
+And just to illustrate this a bit better,
+
+I will actually put a background color here, okay.
+
+Background color.
+
+Something, it doesn't really matter.
+
+So I'm just putting red here.
+
+And now I'm going to show you what happens.
+
+Alright, so this is not quite where we want it to be.
+
+Right?
+
+But actually the code did what we wanted.
+
+Because this here is clearly 50% from the left.
+
+This part of the box.
+
+Which is where the measure starts.
+
+So where the 50% starts counting.
+
+It's from this side, all the way to this side.
+
+And it's 50%.
+
+It's half of the element.
+
+Half of the header.
+
+That's what left 50% means.
+
+It's 50% of the width of the parent element.
+
+And it's actually working.
+
+And the same thing applies to the top.
+
+So it's from here to here,
+
+it's actually 50%.
+
+It's half of the height of the parent.
+
+Now what we wanna do in order for this
+
+to be exactly in the center,
+
+is to shift this just a little bit,
+
+so that the center of this box
+
+is here in the center, is here.
+
+That's where we want it.
+
+So we want this middle of the box to be just here
+
+where now the beginning of the box is.
+
+And the same thing applies to the height.
+
+So we want this center here of the box,
+
+this horizontal center,
+
+we want it to be here where the box now begins.
+
+So another way,
+
+what we want is to translate this entire box.
+
+And it's actually pretty easy to do.
+
+We just need to use the transform property in CSS.
+
+Transform, and translate.
+
+Translate.
+
+And now we just need to specify how much we
+
+wanna translate on x and on epsilon.
+
+And what we want is minus 50% for both.
+
+And that's it.
+
+And that's because these 50% are now no longer
+
+in relation to the parent element,
+
+but of the element itself.
+
+And so if we say we want minus 50%,
+
+it will be shifted half of the width to the left side.
+
+And the same for the height.
+
+So minus 50% says that it will be shifted
+
+50% of the element's height to the top.
+
+And so,
+
+and so here it is.
+
+It's now exactly at the middle.
+
+Vertically,
+
+and also horizontally.
+
+It's completely in the middle now.
+
+Now because of this wedge that we cut out here,
+
+it looks a bit weird.
+
+It looks like it's actually more down
+
+than where it should be, right?
+
+It looks like it should be like somewhere here.
+
+And so instead of shifting it down 50%,
+
+maybe we can just do 40%.
+
+We stated the top to be 40%,
+
+and then that should fix our problem.
+
+So this looks actually a lot better.
+
+And just to confirm that everything works as expected,
+
+we can just see that this nicely adapts
+
+to when we decrease the screen size.
+
+The same, we'll just do it like this,
+
+the same happens with the view port height.
+
+So it always stays nicely,
+
+not exactly in the center,
+
+but
+
+at these 40% top
+
+where we specified it to be.
+
+Alright.
+
+So you learned a great new trick.
+
+Maybe you had already used it
+
+because I taught it in my other course as well.
+
+But I think I didn't explain it this well.
+
+So I thought it was important
+
+to make it really clear how this works.
+
+Because it's really important.
+
+You can now use these concepts for other things.
+
+Because now you totally understand how this worked.
+
+So again, just to make everything 100% sure.
+
+These 40% and these 50%,
+
+they are in relation to the parent element.
+
+So 50% of the parent element
+
+is where the text box was located to the left side.
+
+But, on the transform here, when we translated,
+
+this is in relation to the element itself.
+
+And this makes it possible
+
+that the element is exactly at the center.
+
+Alright.
+
+And that's enough for this lecture.
+
+Next time, we're going to do this
+
+little nice animation that we see here
+
+when we reload the page.
+
+So, this.
+
+You saw it coming in from the left side,
+
+and this one from the right side.
+
+Let's do it again.
+
+This entrance animation.
+
+That's what we're going to do next,
+
+which is really exciting I think.
+
+So stay tuned and see you in a second.

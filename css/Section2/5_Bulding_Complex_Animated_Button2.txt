@@ -1,0 +1,627 @@
+So let's now continue building
+
+our animated button.
+
+So this is the final page and the final button.
+
+And what we're missing here is this white part
+
+that looks like it zooms out to infinity when we hover,
+
+and it comes back when we hover out.
+
+See.
+
+So this nice effect.
+
+It's not really necessary, of course, to add this.
+
+But it was a great opportunity to show you the power
+
+of CSS and of pseudo-elements.
+
+So let me show you how we do it.
+
+So as I said, we're gonna use pseudo-elements.
+
+And pseudo-elements allow us
+
+to style certain parts of elements.
+
+For example, the after pseudo-element that we're
+
+gonna use adds like a virtual element
+
+right after the element that we're selecting.
+
+And we can then style that element.
+
+And so using this after pseudo-element
+
+can be really powerful to do some cool effects.
+
+And once you master it,
+
+you're gonna want to use it all the time.
+
+So, let me just add
+
+the after pseudo-element.
+
+So the trick here is to add an element
+
+that looks exactly like the button that we already have,
+
+but we put it behind the button.
+
+And when we hover out of the button,
+
+then this hidden pseudo-element
+
+amazingly goes back behind the button.
+
+So let's see how we can do this.
+
+First, in order for an after pseudo-element
+
+to actually appear on the page,
+
+we need to specify its content property.
+
+So that's always necessary.
+
+It doesn't matter what the content is.
+
+It can even be empty like we're gonna do here,
+
+but we have to specify it.
+
+Otherwise it's not going to appear.
+
+And the same thing with the display property.
+
+So we have to specify the display property.
+
+And in this case, we're gonna say it's an inline block
+
+because the button that we have is also an inline block.
+
+And so, again, we want it to be exactly the same.
+
+We want it to look the same.
+
+So we want to have a height of 100%.
+
+And we want to have a width of 100% as well.
+
+And this works because the after pseudo-element
+
+is basically treated like a child of the button.
+
+And so if we say that we want the height to be 100%,
+
+that's 100% of the width of the button.
+
+And so suppose that the button has 100 pixels
+
+of height and 50 pixels of width.
+
+And so this after pseudo-element
+
+will have the exact same dimensions if we set it to 100%.
+
+Now the border rate is, should also be the same.
+
+100 pixels.
+
+So something really big.
+
+And now, we also want it to be white.
+
+But in order for it to be white,
+
+we actually should make another after pseudo-element
+
+but this time for the button, right.
+
+So let's put it here.
+
+And after.
+
+And so background color
+
+should be white.
+
+Alright.
+
+Now let's just see on our page if it actually shows up.
+
+So right now it still looks like it's part of our element.
+
+And so we should change that.
+
+So what we wanna do,
+
+remember,
+
+is to put it behind our actual button.
+
+So how can we do that?
+
+And we use absolute positioning.
+
+So position and absolute.
+
+And then we just say it should be zero from the top
+
+and zero from the left.
+
+Now remember that this absolute positioning
+
+needs to have a reference.
+
+And the reference is the first element
+
+with the relative position that it can find.
+
+Now in this case it would be the header
+
+because remember we did that before.
+
+But we don't want it to be the header.
+
+We want it to be hidden after the button.
+
+And so, the reference should be the button.
+
+Therefore, what we have to do
+
+is to set the position property of the button to relative.
+
+Alright.
+
+And so now it should be hidden behind the button.
+
+Now one more thing that we have to do
+
+is to set the z index.
+
+And we will put it to minus one.
+
+So remember the z index defines the position
+
+of the elements if they are one on top of another.
+
+And so this one has minus one
+
+and so it's definitely behind the button.
+
+Now since it's hidden,
+
+I cannot really show it to you on the page now.
+
+But we're gonna see it in a little bit.
+
+So when do we actually want to see it.
+
+We want to see it when we hover the button.
+
+So what we're gonna do is to write it like this.
+
+And this may seem a bit complicated,
+
+but it's actually not.
+
+So, when we hover the button,
+
+then we want some certain styles
+
+for the after pseudo-element.
+
+So this looks a bit weird but it makes total sense.
+
+So this is an after pseudo-element
+
+only when we have the button on the hover state.
+
+And what do we want to happen?
+
+We want it to be bigger.
+
+Right. Remember.
+
+We want the element to grow and to fade out.
+
+And so, what we first do is to use once again,
+
+the transform property.
+
+And I told you it was really important and,
+
+so yeah, it is.
+
+This time we do a scale.
+
+So what scale does is to simply
+
+increase the element.
+
+So if we do scale two,
+
+then it will appear double the size that it had before.
+
+So now we can actually check if it's working alright.
+
+So reload.
+
+And, whoa.
+
+There it is.
+
+So this white part that you see
+
+outside here is the pseudo-element
+
+that becomes visible as soon as we hover over the button.
+
+Let's actually make it a different color here,
+
+like red,
+
+just so that you can see the difference.
+
+And whoa.
+
+Now it's everything red.
+
+But that's not a problem.
+
+For some reason the original button is also getting red.
+
+But we still can be sure the pseudo-element is behind
+
+the button because we still can see the text.
+
+And so that means that the original button
+
+is still on top of the pseudo-element.
+
+Let's put it back to white, where it was.
+
+And we don't want to scale it this much.
+
+So let's just say one point five.
+
+And we also want this to be animated just like before.
+
+So where do we have to put the transition property?
+
+Exactly.
+
+We do it on the initial state.
+
+In this case the initial state is of course
+
+this after pseudo-element.
+
+So we say
+
+transition,
+
+and again I'm going to use all here,
+
+and then use, let's say, point four seconds in this case.
+
+So here we had point two,
+
+but we want this one to take a little bit longer.
+
+Now what also happens,
+
+is that the element actually fades out.
+
+So opacity zero.
+
+That's the trick for fading something out,
+
+is going to opacity zero.
+
+We did that before in our other animation
+
+in the lecture before,
+
+and so here we're doing it again.
+
+So opacity zero sets something to invisible basically.
+
+So let's check out
+
+if it works already.
+
+Yeah, that's actually it.
+
+It's already working, right?
+
+It comes back.
+
+It goes out and it comes back.
+
+So, really cool, right?
+
+Now we can make this a a little bit better
+
+because if you look closely at the top of the button,
+
+and you see that it looks really small.
+
+So the part that's fading out is like really small.
+
+Take a look.
+
+So let's do this a bit better.
+
+And actually with this I can show you
+
+that there are different scales.
+
+So scale, without any epsilon here,
+
+simply scales the entire element.
+
+But we can do scale x,
+
+and then that's how it's gonna scale on the x direction.
+
+On the x axis.
+
+And here we want to do one point four.
+
+And now scale, epsilon as you can imagine,
+
+in the other direction.
+
+So let's put one point six here.
+
+So they are different scales.
+
+Just like they are different translates,
+
+or rotates, or other functions that we can put
+
+here in the transform.
+
+So, let's check it out.
+
+And, yeah.
+
+So now it looks a bit better.
+
+So, really cool.
+
+There's just one thing left here because,
+
+take a look here what happens when we load the page.
+
+You saw this.
+
+This came up moving from the bottom.
+
+So first, we saw these two elements coming in,
+
+like we coded before.
+
+And then the button came up
+
+from the bottom to this position.
+
+So let's very quickly code up
+
+another animation for that.
+
+And we're gonna put it here after this one.
+
+Actually I'm gonna copy it
+
+'cause it's pretty similar.
+
+So move in,
+
+let's say bottom now,
+
+from the bottom.
+
+This time we don't need any 80%
+
+because it's just from one point to the other.
+
+And now I'm going to leave it to you to specify,
+
+let's see,
+
+what we should put here.
+
+So pause the video,
+
+and try to figure out how this should look like.
+
+So, did you figure it out?
+
+How should the button be positioned
+
+right in the beginning before the animation starts?
+
+It should be a bit lower than its current position, right?
+
+Because it's moving in from the bottom
+
+to its original position.
+
+And so we can do translate epsilon this time.
+
+And put something like 30 pixels in here.
+
+That's because remember,
+
+for the epsilon direction
+
+it goes like this.
+
+So from top to bottom.
+
+So if we want to move it down, it's a positive value.
+
+Alright.
+
+And let's now actually use this animation.
+
+Now again there will be multiple buttons like this.
+
+But I only want this animation to happen
+
+on this particular button.
+
+And so what I'm gonna do
+
+is to create a new class on the button.
+
+So button,
+
+animated.
+
+And only this button will have this class.
+
+Okay?
+
+So let's put it here.
+
+Button.
+
+Animated.
+
+And then in here I will put the animation.
+
+So animation,
+
+and I'm going to use the shorten property
+
+that I showed you before.
+
+And now it's called move in bottom.
+
+And let's use point five, second animation.
+
+And we're gonna use an ease out this time.
+
+Okay?
+
+Now plus what we're gonna do is to have a delay.
+
+So we don't want to start it at the same time as the others.
+
+We want it to start slightly later.
+
+So maybe not one entire second,
+
+which is the animation time of the other two animations,
+
+but maybe just 75% of that.
+
+So .75 seconds.
+
+So I told you that we could put all of
+
+these values in the same animation property.
+
+So this is the animation name, the animation duration,
+
+the animation timing function,
+
+and the animation delay.
+
+So let's take a look at what happens here.
+
+Alright, so you saw that.
+
+Actually the button was visible
+
+before the animation happened.
+
+Let's take a look again.
+
+So it stays visible and then it starts.
+
+Now what could we do in order to prevent this.
+
+We could simply put these initial states on the button.
+
+But that would be highly impractical, right?
+
+Wouldn't make much sense.
+
+So there is another property related to animations.
+
+And this one is called animation fill mode
+
+So animation fill mode.
+
+And now we can set it to backwards.
+
+And what this does,
+
+is that it will automatically apply
+
+the styles up to zero percent before the animation starts.
+
+So, again, these styles will now be applied
+
+before the animation starts simply by using the
+
+animation fill mode and set it to backwards.
+
+So, pretty amazing right?
+
+So it's really simple, simple solution to this problem.
+
+And so let's try it again.
+
+And, yeah, so here it works.
+
+Alright.
+
+And that's it for this lecture,
+
+and actually for this section.
+
+So, we've come a long way so far,
+
+and we already coded a bunch of really cool stuff I think.
+
+We already have the header already completed.
+
+Only what's missing here is this navigation
+
+but it's a bit too complex for now,
+
+so we're gonna leave it for another time.
+
+But for now, we've come far enough with this project
+
+that it's now time to show you a little bit of
+
+how CSS actually works behind the scenes.
+
+So I have a couple of really great lectures
+
+coming up which I spent a lot of time building for you.
+
+But they will be really insightful and helpful,
+
+I hope.
+
+So,
+
+review what we just did in this section maybe.
+
+Or you can just move on to the next one right now.
+
+Anyway, see you next time.

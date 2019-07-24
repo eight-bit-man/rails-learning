@@ -1,0 +1,883 @@
+It's now time for a very cool lecture
+
+and one that I'm really excited about
+
+because we're gonna talk about
+
+how to implement CSS animations.
+
+So, as I said, you're gonna learn in this lecture
+
+how to create CSS animations using the keyframes at-rule
+
+and the animation property.
+
+So what we're trying to do
+
+is this animation that we're gonna see here.
+
+So watch carefully at these two parts here,
+
+or H1 element.
+
+So this one fades in,
+
+and it also moves in from the right side here.
+
+Right?
+
+And this one moves in from the left side
+
+and it also fades in.
+
+So let's take a look again.
+
+So, that's it.
+
+This one fades from the left,
+
+and this one fades in from the right.
+
+So let's code these animations in CSS.
+
+And it's really cool, believe me.
+
+Now there are generally two types of animations in CSS.
+
+The first one, which is also the easier one,
+
+is to just use the transition property,
+
+and then change the properties
+
+that you want to animate on an event,
+
+like when we hover the element.
+
+And I'm sure that you're familiar with this method,
+
+and if not, don't worry
+
+because we're gonna use in the next lecture.
+
+But what we're doing in this lecture is a bit different
+
+and actually a bit more advanced and cooler.
+
+Because these animations allow us to put more options
+
+and so they are a bit more complex.
+
+So let me show you how it works.
+
+So we start by creating an animation
+
+that looks exactly like we want it to be.
+
+And in order to do that, we use the keyframes at-rule.
+
+So we write @keyframes,
+
+@keyframes, and then we give the animation a name.
+
+And we're gonna start with the first part
+
+so, the heading primary main.
+
+Which remember, moves in from the left.
+
+So I'm gonna call this animation moveInLeft.
+
+Okay.
+
+And now in here, I can specify what I want to happen
+
+in each moment of time of the animation.
+
+So we start with 0% which is before
+
+the animation actually starts.
+
+So this can also be called start.
+
+Then the finish is at 100%,
+
+which is when the animation finishes.
+
+But we can put other steps here in the middle.
+
+So for example, if we want something to happen
+
+at the moment where the animation is at 80%, for example,
+
+and we could do 50, we could do 36,
+
+we could do any percentage here that we want.
+
+But let's just start with 0%, so the initial state,
+
+and then 100%, which is the final state.
+
+So how do we want the element to look like
+
+before it starts to move in?
+
+First, we want it to be invisible.
+
+Right?
+
+So what we can do is opacity zero.
+
+So at the beginning of our animation,
+
+the opacity will be zero and at the end of course,
+
+we want it to be back to one.
+
+So opacity, one.
+
+So that's one of the properties that we're animating here.
+
+Now for the browser performance,
+
+it's best to only ever animate two different properties.
+
+One is opacity, which is the one that we're using here,
+
+and the other one is the transform property.
+
+That's what the browsers are optimized for,
+
+for these two properties.
+
+But with transform, we can do a whole lot.
+
+And so it's everything that we need actually
+
+to make all these cool animations that you can imagine.
+
+So remember that the element comes in from the left.
+
+So where do we want it to be in the beginning,
+
+before the animation actually starts?
+
+We want it to be more on the left than in the beginning.
+
+Right?
+
+And so we can use
+
+transform
+
+and then translateX.
+
+And why x?
+
+Well, because we want it to animate in the x-direction.
+
+So remember, the x-direction is like this,
+
+go from left to right,
+
+and the y-direction, or axis,
+
+goes from the top to the bottom.
+
+So we want to translate it in the x-direction,
+
+and we want it to be more on the left than in the beginning.
+
+And so it's a negative value.
+
+So let's say 100 pixels minus.
+
+Okay?
+
+Because, remember that the direction goes
+
+from left to right.
+
+So a positive value means it goes to the right,
+
+and negative value means it goes to the left.
+
+So just like in basic mathematics.
+
+Alright, but moving back here.
+
+How do we want it to be when we are at 100%?
+
+We simply want it to look the way that it looks now, right?
+
+And so we say translate
+
+zero.
+
+And why zero?
+
+Well because, if we translate at zero,
+
+then it's gonna look exactly the way
+
+that it looks right now.
+
+Make sense?
+
+So this is the very basic animation just with the initial
+
+and the final state.
+
+So let's now actually apply this animation.
+
+And so for an animation to work,
+
+there are only two properties
+
+that we have to really specify.
+
+Which are called animation-name,
+
+so animation-name which is the name
+
+of the animation we just wrote.
+
+And so it's moveInLeft
+
+moveInLeft
+
+and then the animation duration.
+
+Okay,
+
+animation-duration.
+
+And so this the time that the animation should take.
+
+Just to see it in the beginning, let's put three seconds
+
+so it takes a longer time
+
+so we can see if it's actually working.
+
+We can actually put five seconds
+
+and it takes even a bit longer.
+
+So these are the only properties that are required
+
+for an animation to work.
+
+Now, there are a lot more properties,
+
+but I'm gonna show them to you in a second.
+
+Now let's just see if this actually works.
+
+And so we need to reload our page now.
+
+And yeah, you see? It's working. Great!
+
+Amazing, right?
+
+This is really fantastic, so let me play it again.
+
+So it's happening really slow because we
+
+specified it for five seconds but we can then change that.
+
+Now let me play the original one again.
+
+And you see that in this version it actually first goes
+
+a bit in that direction and then it moves back, right?
+
+Let me play it again.
+
+So it's this, this small movement in this direction.
+
+So how do you think we are going to do that?
+
+What do you think?
+
+And that's right, we're going to use this 80% here.
+
+So what we can say here is that we want it to be
+
+at this point, translateX to be
+
+20 pixels, for example.
+
+Because remember if we're specifying a positive value here
+
+it will go to the right side.
+
+So the final position is zero,
+
+the initial position is a lot more to the left,
+
+and then this intermediate position, let's say,
+
+is a bit more to the right.
+
+So let's check it out.
+
+And yeah, nice! That's really nice.
+
+Let's just put it a bit slower now that we have
+
+this animation really going on already.
+
+So just in one second.
+
+Alright. Maybe that's a bit too much.
+
+I will leave it just at ten pixels.
+
+Great. So this already works.
+
+Now I told you that there are other properties
+
+for animations that we can also specify as.
+
+So let's take a look at them.
+
+The first one is that we can set a delay.
+
+So animation-delay, let's say three seconds
+
+and so now before this animation starts to play,
+
+it will first wait three seconds.
+
+So let's take a look.
+
+Alright, so here we go.
+
+So it waited three seconds. So one, two, three,
+
+and there it goes.
+
+Okay, so that's the animation delay.
+
+Now we can also do something else,
+
+I'm actually going to comment out
+
+this part that we don't want,
+
+because this is just to show you
+
+but I will not delete it so that you can still see it
+
+because it's properties can be very useful sometimes.
+
+Okay. Another one that we can do is an animation count,
+
+animation-iteration-count.
+
+So if we set this to, let's say, three,
+
+then the animation will simply happen three times.
+
+So let's check that out as well.
+
+So one, two, three.
+
+Okay?
+
+But we also don't want this one to happen
+
+so I'm putting it here in the commented code.
+
+And then one that is actually quite important
+
+which is the animation-timing-function.
+
+So this is a function which defines
+
+how the animation will proceed.
+
+So, how fast or how slow these parameters
+
+that we specified here happen over time.
+
+And there are different built-in animation functions
+
+for example, ease-out, so ease-out for example.
+
+Let's take a look at it now.
+
+Probably gonna look a bit similar,
+
+but they are different timing functions.
+
+So I already have this one here open.
+
+So we have ease, ease-in, ease-out,
+
+and then all of these built-in animation timing functions.
+
+So for example with the ease-in function,
+
+the animation will start slower
+
+and then accelerate over time.
+
+And with ease-out, it's the opposite.
+
+So it will start faster
+
+and then it will become slower by the end.
+
+So this might sound a bit complicated
+
+but we're gonna look at animation timing functions
+
+again in another lecture.
+
+We're also going to look at this cubic-bezier function here
+
+which basically allows us to write a custom function.
+
+So a custom timing function different from
+
+these predefined functions.
+
+And this can actually make all the difference
+
+in how the animation feels to the user.
+
+So we used, remember, ease-out.
+
+So let's play it again.
+
+And this is how ease-in, for example, looks like.
+
+So it was slower towards the beginning,
+
+and then faster at the end. See?
+
+So at the end it happened a lot faster.
+
+So let's stick with ease-out like we had at the beginning.
+
+Okay, and these are the most essential animation properties.
+
+There are actually more,
+
+but they are not really so important.
+
+We can take a look at them if you're really interested.
+
+So this is the moveInLeft animation
+
+but we can now also build the moveInRight.
+
+So let's just copy this part of the code
+
+and call it moveInRight.
+
+So, how do you think this one will look like?
+
+So I want you to pause the video now
+
+and try to change these values here
+
+so that the animation instead of going in from the left,
+
+it goes in from the right.
+
+So take a second and try that out.
+
+Alright, did you manage to do it?
+
+Well let's see.
+
+What do you think is the most logical way of doing it?
+
+So all we have to do, is to actually remove this minus here,
+
+and put it here.
+
+And why is that?
+
+Because as I mentioned, this 100 pixels here,
+
+if it's a plus value, it moves the element to the right.
+
+Because it goes forward in the x-direction.
+
+And so it's the opposite as we had before,
+
+and then the same thing, of course, here.
+
+Because now we want it to move a little bit to the left,
+
+before it goes back to it's original position at zero.
+
+Right?
+
+Okay. So now all we have to do is to add it here.
+
+Now instead of specifying all of
+
+these properties here one-by-one,
+
+animation-name, duration, timing-function, delay, et cetera,
+
+we can simply use the shortened property
+
+and just say animation.
+
+And so you can put all of these together,
+
+and then CSS will figure out what means what.
+
+So moveInRight over the duration of one second,
+
+and with the ease-out function.
+
+And that should work now.
+
+So let's take a look.
+
+And, yep! So it's exactly what we had before.
+
+Great.
+
+Now maybe you have already noticing that here in the end,
+
+take a look here at this text,
+
+right before the animation ends you will probably
+
+see a little shake here, okay?
+
+So let's take a close look at the end.
+
+There it was.
+
+So it moved a little bit like to the top.
+
+Did you see it?
+
+Let's take a look again.
+
+So you saw it moving? So it moved a little bit,
+
+so it's a bit shaky,
+
+and sometimes this happens in animations.
+
+And to be honest,
+
+no one really knows actually why this happens,
+
+but we, actually, we have a fix for this.
+
+So there is something that we can do
+
+and what we have to do in this case,
+
+is to simply declare the backface-visibility property,
+
+backface-visibility, and set it to hidden.
+
+So the entire heading-primary element
+
+because you see actually this entire element
+
+is what moves on this animation.
+
+So it's a bit shaky,
+
+and its the entire heading-primary element.
+
+This backface-visibility property determines
+
+if the back part of the element when we transform it
+
+is visible or hidden for the user.
+
+So imagine we have an element and we rotate it 180 degrees.
+
+So it would be logical that we then see the back part
+
+of that element, right?
+
+But if we use backface-visibility hidden,
+
+then that back part,
+
+so that part that's behind the element, let's say,
+
+that part actually gets hidden.
+
+Now in this case,
+
+we're not rotating anything,
+
+we're not doing anything like that
+
+but we still use this fix here,
+
+like this hack in order to fix this little shaking
+
+that we see in the animation.
+
+And again,
+
+no one really seems to know why the shaking happens
+
+and why this fixes it, but as long as it works, it's okay.
+
+And so now, let's take a look at it again
+
+and look really closely here, really close.
+
+And it's gone, right?
+
+It's no longer shaking
+
+and everything appears to be working just fine.
+
+And so yeah, that's how animations work.
+
+So this is a really powerful thing.
+
+And we could actually go really crazy with this.
+
+Imagine we would do something like put a 60% here
+
+and say transform at this point should be rotate,
+
+let's say, just something like 120 degrees.
+
+So degree is a unit we use for rotations.
+
+And we can also say that in the beginning it should be
+
+rotate
+
+minus 50 degrees.
+
+So just some random numbers here to try out
+
+to see what happens. Okay?
+
+Not really sure how it's gonna look like.
+
+So it's this crazy thing, you see?
+
+Let me play it again to you.
+
+So this is just something crazy just to show you
+
+the power that we have here with these animations.
+
+To make it a bit more realistic,
+
+let's say we rotate it 360 degrees.
+
+Well that didn't really work, but let's try 180 degrees.
+
+Now it should do something.
+
+Yeah.
+
+So it starts just right, and it rotates until 70% I believe,
+
+or was it, oh yeah 60%
+
+and then it went back to the initial position
+
+because we didn't specify anything here.
+
+We could actually put this one here as well.
+
+So we're just playing around here with the numbers,
+
+you don't really have to follow this.
+
+I just wanted to show you that there's not really a limit.
+
+So this actually looks the same,
+
+let me try it again.
+
+180 this time,
+
+and,
+
+well I guess it didn't work exactly
+
+because we have to put it here in this step as well.
+
+So let's put here as well just to play around a little bit.
+
+And here we go. Let me close this one,
+
+and of course, delete this little thing that we did here.
+
+Because this is just like we want it to be.
+
+You saw I selected two things at the same time.
+
+You saw that?
+
+I'm sure you can do that as well in your code editor
+
+and sometimes it's really handy.
+
+So for example, I have this transform.
+
+If I wanna select the next one, I just have to hit Command+D
+
+here in this Visual Studio code
+
+but the same thing works in Atom or Brackets, or whatever.
+
+So if I just hit Command+D, and D, and D,
+
+then I have all of these transforms selected
+
+and you see that the cursor is blinking here
+
+and so then I can delete,
+
+and I can write something else if I want,
+
+and it's happening in all these places at the same time.
+
+Alright?
+
+So this is not really CSS,
+
+but it's a nice trick that you can use in your text editor.
+
+Also, I can put multiple cursors just by clicking it
+
+then hitting Command, or Control maybe on Windows
+
+and then just keep clicking and it will add multiple cursors
+
+all over the place.
+
+You see, like this.
+
+And now if I start writing A-B-C,
+
+it's writing A-B-C everywhere.
+
+So in this case, not really useful but you can do it.
+
+And sometimes it's pretty useful
+
+like to change multiple things at the same time, okay?
+
+And since we're talking about text editors,
+
+I'm sure that yours also has this functionality here
+
+which is called Minimap,
+
+which shows us a very small version of our code.
+
+So we can use this to drive around in our code,
+
+or to move around.
+
+So imagine we wanna go to the beginning
+
+and then we just need to click here,
+
+and then it goes exactly wherever you want to.
+
+Or, imagine that I'm working here
+
+and I want to go to the animations
+
+and here I can see that these here look like the animations
+
+and I just have to click here
+
+and then I'm here at the place where I wrote the animations.
+
+So instead of scrolling all the way up and down,
+
+imagine we have 500 lines of CSS
+
+then this becomes really useful.
+
+And so once again, this is also in your code editor,
+
+you just have to turn it on
+
+if it's not turned on by default.
+
+Only if you like it, of course.
+
+But I think it's pretty helpful sometimes.
+
+Okay, and that was the goal that I had for this lecture.
+
+So I showed you how animations work
+
+with the keyframes at-rule,
+
+and I showed you that we can build
+
+really complex animations with this.
+
+Oh, but before we stop,
+
+I can actually show you something else
+
+which is, imagine that we don't just want this to happen
+
+when we reload the page.
+
+So imagine we want this to happen, this animation to happen
+
+when we hover, for example, something.
+
+So let's say we want this animation to happen to the logo
+
+when I hover it.
+
+So let's say, logo
+
+hover,
+
+and so you see I can actually use this animation here
+
+in multiple places.
+
+So I can just define moveInRight in one place
+
+and then use it all over the place. Okay?
+
+And so now this will only happen as soon as they hover.
+
+So let's reload this
+
+and here we go.
+
+You see? There it is again.
+
+So, this animation does not only have to happen
+
+with the page load like we have these ones here,
+
+see these ones are on page load, but this one is on hover.
+
+Okay well this was just to show you,
+
+we don't really want it to be here, right?
+
+Okay, but this was now really all I had
+
+to show you for this lecture.
+
+So let's now move on to the next video. See you there.

@@ -1,0 +1,1067 @@
+Welcome back.
+
+Let's now finally learn something new in CSS.
+
+Which is exactly why you came to this course, right?
+
+Now, as in all my other courses,
+
+in all the coding lectures,
+
+I always have this slide called
+
+What You Will Learn in this Lecture.
+
+And I found that students really appreciate
+
+this quick lecture summary,
+
+so that they can later come back to the lecture
+
+and know if it contains exactly what they are looking for
+
+or not.
+
+And that's why I decided to continue this tradition
+
+in this course.
+
+In this lecture, you're gonna learn
+
+the best way to perform a basic reset
+
+using the universal selector.
+
+And how to set up project-wide font definitions.
+
+This might not be really new to you,
+
+but we still have to do this
+
+whenever we start a new project.
+
+Now, what probably is new to you, is to clip parts
+
+of elements using the new clip-path property.
+
+And so that's the first real new modern CSS
+
+you're gonna learn.
+
+Let's do that right now.
+
+All right, so we're back in the code editor
+
+that I showed you before.
+
+In this screen we have always the code editor
+
+and then I have here another screen on the side
+
+where I keep the webpage open
+
+so we can check on the work that we've been doing.
+
+Now this here is the final webpage
+
+that I also will keep open as a reference
+
+so that we can see always what to do next.
+
+And so let's now actually open the website document
+
+that we're gonna work on.
+
+So it's this index.html, of course, in the project folder.
+
+So in my case, it's on the desktop,
+
+but maybe in your case it's somewhere else,
+
+but let's go open this index.html file for now.
+
+And of course it's still empty
+
+because we didn't write any code yet, right?
+
+Now later on we're gonna open this index.html
+
+in a slightly different way.
+
+We're basically gonna create a small local web server.
+
+But for now this works just fine.
+
+All right, so let's go back now to the editor.
+
+Now to start, let's write the html for the header element.
+
+Just for this part. This green, big element.
+
+All of this will be our header.
+
+For now, we're only gonna concentrate on
+
+the background image and on making this shape here, okay?
+
+That's what we're gonna focus on in this lecture.
+
+We're gonna use the HTML5 header element.
+
+And we're also going to give it a class called header.
+
+If you're wondering why we're giving it a class name,
+
+instead of just selecting it in the CSS
+
+using the header element selector,
+
+it's because you want a class name
+
+on each and every element here in the html.
+
+But we're gonna talk a bit more about CSS architecture
+
+later in the course, where all of this will make sense.
+
+Just for now, let's simply put some text here.
+
+So, some text.
+
+And that's enough for the html for now.
+
+Remember we just want this big box with the background image
+
+and the color and then that shape that we just saw, okay?
+
+Let's now head over to our CSS file
+
+and start writing some CSS.
+
+Now the first thing I'm gonna do
+
+is to perform a basic reset.
+
+And maybe if you took my other CSS course,
+
+then you might remember that I used something called
+
+Normalize that CSS in order to make a cross browser reset.
+
+So in order to make every browser render the page
+
+in the exact same way.
+
+Now doing so is still valid, but I found that browsers
+
+are actually getting better and better
+
+and more consistent in the way that they render a website.
+
+And so that's no longer really necessary,
+
+and so I don't do it anymore.
+
+Let's just do a simple reset using the universal selector.
+
+Just like this.
+
+The universal selector will select each and every element
+
+on the page, and then apply these declarations here to it.
+
+We want a margin on all of them of zero pixels
+
+and of course also a padding of zero.
+
+By default, browsers apply a certain margin,
+
+or a certain padding, to some elements.
+
+For example, an H1 element, so the main heading,
+
+there's always some margin in it.
+
+And we don't want any of that.
+
+This allows us basically to start clean,
+
+without the browser adding any margins or paddings,
+
+that we don't want, to our elements.
+
+Another thing that we're gonna do,
+
+is to set a box sizing property to border box.
+
+Border. Box.
+
+And if you're not familiar with box sizing border box,
+
+what this does is to change the box model
+
+so that the borders and the paddings are no longer added
+
+to the total width or the total height
+
+that we specify for a box.
+
+Without this, any paddings and borders
+
+are added to the height or the width of an element
+
+which really isn't helpful for us,
+
+and so with this, we're getting rid of that behavior.
+
+All right. And next, let's set some overall font properties
+
+for the entire webpage.
+
+This time, we're not going to do it
+
+in the universal selector, but in the body element selector.
+
+And why do we do it this way?
+
+Well, we do it because the properties related to font
+
+are usually inherited,
+
+so we're using the power of inheritance here.
+
+I'm gonna explain everything there is about inheritance
+
+in the next section.
+
+We have a whole lecture just about inheritance in CSS.
+
+What you need to know for now,
+
+is that we set, for example, the font family
+
+on the body element, which is basically the parent element
+
+of all the other elements.
+
+Then this font family will get inherited,
+
+but all the child elements of the body.
+
+And doing it this way is actually more efficient,
+
+and it's a better practice than to just put all of this
+
+in the universal selector up here.
+
+We never do that.
+
+Everything related to font,
+
+we always specify it here in the body selector.
+
+We set the font family to Lato.
+
+And if that's not available, then just some Sans Serif.
+
+I can use Lato because I already included it here
+
+in the html.
+
+As I said in the beginning, this comes from Google fonts,
+
+and it's a font that I have already included.
+
+If you're not familiar with this, it's really simple.
+
+You can just go to Google Fonts and find it out.
+
+I included Lato with the font weights of
+
+100, 300, 400, 700 and 900.
+
+Let's set the overall font weight to just 400.
+
+Font weight. 400.
+
+Also the overall font size should be 16 pixels
+
+and the line height of, let's say, 1.7.
+
+So basically line height 1.7 means that
+
+it's 1.7 times bigger than the predefined line height,
+
+that we would have without this.
+
+We're using 16 pixels here for now,
+
+but we're actually going to change this later
+
+to use a better technique,
+
+but for now, let's go with these pixels.
+
+Something else we can set here is the overall text color,
+
+which I'm sure you also know how to do it.
+
+And it's just color.
+
+And then the color that I chose for this text
+
+is this gray, 777.
+
+And here in my text territory actually have
+
+an extension, which then nicely highlights the color.
+
+This is how the color looks like, this gray 777.
+
+It also does it up here in the comments.
+
+These are the greens and you can already see
+
+how they look like because of what this extension does.
+
+And with this code, we just performed a basic reset
+
+and we also set the project-wide font definitions
+
+here in the body selector
+
+because they will all be inherited to their child elements.
+
+With that in place,
+
+let's start formatting the header element.
+
+And remember it has the header class.
+
+We use the class selector and then header.
+
+Let's just create some space here.
+
+Let's start by defining the height,
+
+and let's set it to 95vh.
+
+In case you're not sure what this does,
+
+it's basically we say that at every point,
+
+the height of this box, of this element,
+
+should be 95% of the viewport height.
+
+Now we could put 100 here,
+
+then the element would always be exactly the same height
+
+as the viewport, but I chose to go with 95
+
+to make it not 100%, but only almost 100%.
+
+Let's now set the background image.
+
+I start typing background,
+
+but instead of having to write all the way until background,
+
+and then image, I can just start writing image right now,
+
+because the text editor will recognize
+
+that I'm looking for background image.
+
+You see, it already recognized that that's what I want.
+
+And this will also work in your text editor.
+
+You can just do the same and you don't have to write
+
+all the codes, like background image,
+
+when instead just back img and then it works.
+
+Press enter and that's it.
+
+The background image that we want
+
+is here in the image folder.
+
+It is called hero, I think.
+
+Yeah, so that's the one we want, right?
+
+You see? It's this one here.
+
+And we specify an image by writing url
+
+and then specifying the path to the image.
+
+Now we're currently in the CSS folder,
+
+so we first have to go one folder up
+
+to go into the project folder.
+
+And so it's ../ then, img, so image,
+
+and then the name of the image, hero.jpg
+
+And that's it.
+
+So again, we were here in the CSS folder
+
+and we went one level up to go into the project folder
+
+so the Natours folder here,
+
+and then from there we went into the image folder,
+
+and then hero.jpg.
+
+And now something else we should do
+
+is to set the background size to cover,
+
+which I'm sure you're also familiar with.
+
+Again, I do this trick.
+
+I just write back, then I start writing size,
+
+return, and that's it.
+
+And cover is what I want here.
+
+And what cover does is that whatever the width of
+
+the viewport, or the element, it'll always try to fit
+
+the element inside of the box.
+
+Let's now take a look on what that looks like.
+
+This one is it. Refresh. And here we go.
+
+So our background image adapts nicely to the viewport,
+
+I hope.
+
+And yeah, it does.
+
+And you see here this white bar,
+
+it's the remaining 5% of the viewport height.
+
+100% would fill everything.
+
+95 fills just up until this point.
+
+And also here you can see the text,
+
+the some text the we put
+
+and it's already styled with the Lato font family,
+
+with the gray color and the 16 pixels in size.
+
+Now something else we could do here
+
+is to set the background position.
+
+Background position and we can set it to top.
+
+Let's see what that does.
+
+It looks like it did nothing, but actually it does.
+
+Because what it does is to ensure that whatever
+
+the viewport size is that this top of the image here
+
+always stays at the top of the container.
+
+So you see now here, as we go up,
+
+the bottom of the image gets cropped,
+
+but the top of the image stays the same, right?
+
+So it's this, what I'm talking about.
+
+Now we could change it, so let's actually use the DevTools
+
+here right now.
+
+Because this is a fundamental part of being a web developer
+
+is using these Chrome DevTools.
+
+Let's see what it would look like if we set it to bottom.
+
+Now what happens is that the bottom stays the same
+
+as we change the image size.
+
+The bottom stays the same and it changes up there.
+
+Now what we also can do is to set it to center.
+
+What it will do now is to always stay at the center.
+
+It will now probably crop out at the top and at the bottom.
+
+So you see. Yeah, that's what happens now.
+
+Basically, it's in the middle here now,
+
+where it stays the same, but at the bottom and the top
+
+it is cropped out. You see?
+
+All right, but we of course want it at the top.
+
+Next up, we want that nice green gradient
+
+all over the image.
+
+And how do we do that?
+
+We use background image again, because to specify gradients,
+
+we always use the background image property.
+
+We already have the background image property here
+
+with the image.
+
+So what can we do?
+
+We simply specify a second one.
+
+And what we do is to use the comma.
+
+Now we want the background to stay on top
+
+and so it actually has to be first
+
+background image that we specify.
+
+We put a gradient here
+
+and then comma, the image. Okay?
+
+Let's put actually the linear gradient here.
+
+Linear gradient and then the colors that we want.
+
+And we actually have the colors up here,
+
+so we start with the light green on one side.
+
+I paste it here.
+
+And then comma, and on the other side, the dark green.
+
+Okay. Makes sense.
+
+We have basically two background images,
+
+one on top of the other.
+
+The first one is the linear gradient
+
+going from this color to this color.
+
+And then after that, so basically below that,
+
+is this hero image.
+
+Now another parameter that we can specify
+
+in the linear gradient is basically to where
+
+the gradient should go.
+
+We can say to right.
+
+And so now CSS understands that it should start
+
+on the left side and go to the right.
+
+Let's see if that worked.
+
+Close the DevTools and then reload.
+
+And yeah, that's it.
+
+So we have the gradient going from the left side.
+
+But the first green, lighter one, going to the right side
+
+with the darker green.
+
+Now we could also say to top or to bottom or to left,
+
+and we can also do something else,
+
+which is specifying two directions.
+
+So we say to right bottom.
+
+And so now the gradient will go to the right bottom corner.
+
+Starting probably at the left top. Right?
+
+Let's see if that's what happens.
+
+And yeah, I hope you saw it change.
+
+So now it goes from here, all the way there.
+
+Only one thing left to do
+
+is to actually make the image below it visible, right?
+
+And how can we do that?
+
+Yeah, we have to change the opacity of these colors.
+
+In order to do that, I can actually use the built in
+
+color picker that I have here.
+
+And I'm sure that your text editor,
+
+if you're not using Visual Studio Code,
+
+will do the same.
+
+I just have to pull down this slider here,
+
+then until it gives me an opacity of 08.
+
+I'm sure you're familiar with this rgba syntax.
+
+Basically, rgba means that we have here the R, G and B,
+
+so red, green and blue
+
+and then the opacity value in the end.
+
+And this color picker does the conversion automatically,
+
+so we no longer can use this hexadecimal annotation here,
+
+so 28b485, but we have to change to rgba, okay?
+
+I'm putting 80 here,
+
+so basically 80% of the color is visible.
+
+If you went down here to like 10%,
+
+it will be almost transparent.
+
+But we want 80% here.
+
+This looks a bit confusing here,
+
+so let's actually clean this up a bit.
+
+Each argument has it's own line,
+
+and then also this one on a separate line
+
+so that it's easier to read a little bit.
+
+Again, we have two background images.
+
+First is gradient, going to right bottom
+
+with these two colors.
+
+And then the image below that.
+
+So let's see if that's the effect that we want.
+
+And yeah. That's pretty much how we want it to look like.
+
+Let's check. Yeah.
+
+That's actually almost what it looks like.
+
+You see this small white thing here,
+
+this small white border,
+
+that goes around this entire webpage?
+
+You see it? It's actually also here.
+
+You can see that here it's light gray.
+
+But here it's white.
+
+This white thing goes around the entire webpage.
+
+I think it gives everything a very nice look.
+
+Let's do that as well.
+
+It's actually really easy.
+
+All we have to do is to put a padding
+
+around the entire body.
+
+Padding, 30 pixels.
+
+The body element contains the entire webpage
+
+and so if we set a padding here,
+
+then this padding will get applied on the entire webpage.
+
+Just like this. Here we go.
+
+That's our 30 pixel padding here around the webpage.
+
+This is not a case of inheritance, like we had here,
+
+because the padding is not getting inherited.
+
+All that's happening is that it's applying a 30 pixel
+
+padding around the entire body.
+
+And now the last piece of the styling
+
+that we want to do for the header.
+
+What we want is now this kind of wedge
+
+that we can see here.
+
+And what this is, is to simply clip,
+
+clip out this part of the image
+
+that would otherwise be here.
+
+Okay? Let's now do that.
+
+And for that, we use the really modern CSS property
+
+called clip-path.
+
+So, clip-path.
+
+And what we're doing here is to specify a polygon
+
+in which the image, or the element, will still be visible.
+
+We use the polygon function.
+
+So polygon.
+
+And in here we define a bunch of coordinates
+
+which define this polygon.
+
+For now, let me just put some place holders here,
+
+like X and epsilon. X and epsilon.
+
+And we're gonna specify these later on.
+
+Okay. X and epsilon.
+
+But first, we need to take a look at the image to see
+
+how it actually should work.
+
+So this is our image,
+
+and this is how we want the final version to look.
+
+All right, so what are the four coordinates of this polygon
+
+where we want the element to still be visible?
+
+It's this one here, right? So we're gonna start here.
+
+This one. Then here, this coordinate.
+
+Then this one, this corner.
+
+And then finally, this one.
+
+All we need to specify these four corners
+
+in order to obtain this polygon.
+
+And we're gonna start here at the top left corner
+
+and then move clockwise.
+
+This one first, then this one,
+
+then the third one, and then the final one.
+
+In relation to this point here,
+
+where do we want the first point to be?
+
+We want it to be exactly here, right?
+
+So we don't wanna move it anything in the X axis,
+
+so it's just like this. This is X.
+
+And we don't want it to move in the epsilon axis,
+
+so also not this way.
+
+It's just zero zero.
+
+You want it to stay in the same place.
+
+So zero and zero. Okay?
+
+In the X direction we don't want it to change.
+
+And in the epsilon direction,
+
+we also don't want it to change.
+
+Let's now take a look at the second point.
+
+So this one here.
+
+Counting from here, from the left side,
+
+we want it to change in the X direction, right?
+
+All the way until this point
+
+we want the polygon to go, right?
+
+And so what is this point here?
+
+How far away is it from the left side?
+
+We can simply say it's 100%.
+
+So it's gonna be 100% of the width of this element
+
+away from the left side, from here.
+
+We can just say that X should be 100%
+
+and our epsilon in the epsilon direction,
+
+we don't wanna change it at all, right?
+
+Okay. And now the third coordinate is this one.
+
+It's the same in the X direction, right?
+
+So it's still 100% in the X direction,
+
+but now the epsilon is what changes here.
+
+Let's just put some random number there, okay?
+
+X is still the same, 100%.
+
+And now from the top, we want it to be at some point.
+
+Let's just say 50%.
+
+Or we could also specify it as in pixels
+
+or in any other unit that we want.
+
+For example, I can say 200 pixels, okay?
+
+All right. And now the last coordinate is this one here,
+
+the fourth.
+
+In X, we're back to zero here, right?
+
+Because remember that this side here is the reference.
+
+We don't move anything in the X direction, so this way.
+
+We did move, however, in the epsilon direction,
+
+so going from here,
+
+we did all the way down to the end of the element.
+
+So we want 100%.
+
+In X it's zero and in epsilon it's 100%.
+
+And that's it.
+
+So let's see if this actually worked.
+
+And now, here it is.
+
+All right. Great.
+
+These are the 200 pixels that we specified here
+
+in this coordinate for the epsilon direction.
+
+Let's now inspect this element.
+
+And we can now change here some stuff
+
+so that you can see how this changes.
+
+Imagine that here for the second coordinate,
+
+so this one here, we wouldn't put 100 pixels,
+
+but let's say, sorry.
+
+We wouldn't put 100%, but we would put let's say 500 pixels.
+
+Okay, that makes sense, right?
+
+Because we have 500 in the X direction
+
+and zero in the epsilon direction.
+
+Can also change that of course.
+
+Let's say we have 100 pixels here,
+
+then it look like that.
+
+All right.
+
+Now what I want you to try here
+
+is to make a triangle of this.
+
+Okay?
+
+I'm pretty sure that after this explanation
+
+you should already understand how it works, right?
+
+Try to pause the video and try to do a triangle here, okay?
+
+So, did you manage to make it work?
+
+This is how I would do it.
+
+Let's just get rid of all of this.
+
+And now, the first coordinate
+
+should be here in the center, right?
+
+We have X 50% and on epsilon, 0%.
+
+And now we want this bottom corner here,
+
+so X is 100% and epsilon is also 100%, right?
+
+And now finally it's this bottom corner here.
+
+And so here we have X zero and epsilon is 100%.
+
+So zero and 100%.
+
+And here we go. So here we have our triangle, right?
+
+So if you wanna make a triangle, it's like this.
+
+Now you can do lots of different things with this
+
+and there's actually a very cool tool
+
+which is called Clippy, this one here.
+
+And I'm gonna put it on my resource reference page
+
+so that you can check it out later.
+
+And here you just need to click on one of these.
+
+Let's say we want a right arrow, like this.
+
+To get a bit crazy.
+
+And then all we have to do is to copy this CSS code here.
+
+Now let's just copy these numbers
+
+because we already have the clip-path property written out.
+
+Just to make a final test, final experiment.
+
+It works like this. Okay.
+
+Now we have an arrow.
+
+Okay, but we don't want any arrow.
+
+We just want our element to look like in the example page.
+
+And so here, what we will do, is not to specify a percentage
+
+but a unit of viewport height.
+
+Such as we did here for the height of the element.
+
+In here, I will say 75% of the viewport height, okay?
+
+So let's look how this looks like now.
+
+And that's it.
+
+Now if we change the viewport height,
+
+it will also change dynamically.
+
+This little interval here, right?
+
+And if I close this completely, then it looks like this.
+
+And it looks the exact same way as our original, right?
+
+See. That's how it looks like.
+
+Awesome.
+
+I know this is a bit complicated to understand
+
+this clip-path property and the polygon we have to write,
+
+but try to wrap your head around it,
+
+and then it's actually not so complicated.
+
+I hope that this first coding lecture
+
+of the course was quite fun
+
+and that you already learned something new here.
+
+We're already making great progress
+
+and to continue with this header,
+
+just come with me right to the next lecture.
+
+See you there.
